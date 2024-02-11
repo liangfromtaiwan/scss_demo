@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "bootstrap5-starter-files-gh-pages",
+			"path": "../../../Downloads/bootstrap5-starter-files-gh-pages"
+		},
+		{
+			"path": "../demo_scss"
+		},
+		{
+			"path": "../../フューチャリスト/top_page"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "bootstrap5-starter-files-gh-pages"
+	}
+}

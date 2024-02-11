@@ -1,0 +1,47 @@
+// 常用顏色， bg,color,border,shadow
+@mixin bgBlue {
+background: #5CCDE0;
+}
+
+@mixin borderBlue{
+    border: 6px solid #5CCDE0;
+}
+
+@mixin colorBlue {
+color: #5CCDE0;
+}
+
+@mixin shadow{
+box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+@mixin borderRadius{
+  border: 24px;
+}
+
+//::after,::before的位置調整使用
+@mixin transHalf {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin jc-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//設定斷點
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media(max-width: 375px) {
+    @content;
+  }
+}

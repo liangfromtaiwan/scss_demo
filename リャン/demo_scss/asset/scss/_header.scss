@@ -1,0 +1,213 @@
+.header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+
+  &.active {
+    position: fixed;
+  }
+
+
+  &__inner {
+    background: #fff;
+    padding: 18px 30px;
+    @include jc-sb;
+
+    @include pad {
+      .header__logo__pc {
+        position: fixed;
+        top: 24px;
+      }
+    }
+
+    .cta {
+      display: flex;
+
+      a {
+        padding: 12px;
+        background: #333;
+        color: #fff;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 48px;
+
+    a {
+      color: #333;
+    }
+
+    @include pad {
+      padding-top: 48px;
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 3;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &__item {
+      @include pad {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+      }
+
+      a {
+        padding: 30px 0;
+
+        @include pad {
+          padding: 20px 12px;
+        }
+
+      }
+
+      &--slideDown {
+        position: relative;
+        transition: 1s;
+
+        &::after {
+          position: absolute;
+          content: "";
+          right: -25px;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          clip-path: polygon(0 0, 100% 0%, 50% 100%);
+          background: #333;
+          width: 13px;
+          height: 10px;
+        }
+
+        &.active {
+          &::after {
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+
+            @include pad {
+              right: 23px;
+              top: 19px;
+            }
+          }
+        }
+
+        .slideDown {
+          display: none;
+          position: absolute;
+
+          @include pad {
+            position: relative;
+            top: 0;
+            background: #fff;
+
+          }
+
+          .slideDown__item {
+            position: relative;
+
+            a {
+              background: #333;
+              color: #fff;
+              width: 180px;
+              text-align: center;
+              padding: 16px 0;
+
+              @include pad {
+                width: 101%;
+                text-align: left;
+                padding-left: 36px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .cta__items {
+      display: flex;
+      column-gap: 18px;
+
+      .cta {
+        padding: 10px 12px;
+        gap: 12px;
+        border-radius: 6px;
+        border: 0.4px solid #E0E0E0;
+        background: #333;
+        font-weight: 700;
+
+        @include pad {
+          gap: 12px;
+          padding: 12px;
+          text-align: center;
+        }
+      }
+    }
+
+  }
+
+
+  .header__hamburger {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 12px;
+    right: 16px;
+    cursor: pointer;
+
+    p {
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    &.active {
+      top: 30px;
+      right: 50px;
+
+      span {
+        position: absolute;
+        margin: 0;
+      }
+
+      span:first-child {
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        display: none;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      p {
+        margin-top: 18px;
+      }
+    }
+
+    @include pad {
+      display: block;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 32px;
+      height: 3px;
+      background: #333;
+
+      &:not(last-child) {
+        margin-top: 7px;
+      }
+
+    }
+
+  }
+
+
+}

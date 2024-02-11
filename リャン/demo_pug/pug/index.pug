@@ -1,0 +1,34 @@
+mixin comment(commentDate)
+  .comment
+  .date = commentDate.date
+  .author = commentDate.author
+  .text = commentDate.text
+
+
+doctype html
+html(lang = "en")
+head
+meta(charset = "UTF-8")
+meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+link(rel = "stylesheet", href = "style.css")
+title Document
+link(rel = "stylesheet", href = "/style.css")
+body
+  .wrap
+p.foo
+p.bar.baz
+ul.row.items: li.col - 6 12
+
+
+p 我希望 <span> 快樂 </span>就好
+p.txt.
+  this is a word
+  this is an other word
+
+p あいうえお#[br]かいくけこ
+p 
+  | jkdsj 
+  br
+  | dff 
+
+img(src="", alt="")
